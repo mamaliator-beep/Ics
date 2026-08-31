@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>ماشین حساب محاسبه وزن مقاطع فولادی و استیل - کربن‌استیل</title>
+  <meta name="description" content="محاسبه دقیق آنلاین وزن انواع ورق، میلگرد، تیرآهن، لوله، قوطی و نبشی"/>
+  
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "outline-variant": "#bec8cc",
+            "surface-container-high": "#e6e8ea",
+            "background": "#f7fafb",
+            "surface-mist": "#DCE6F1",
+            "surface-container": "#eceef0",
+            "on-surface": "#181c1d",
+            "on-surface-variant": "#3f484b",
+            "primary": "#004b5a",
+            "surface": "#f7fafb",
+            "on-primary": "#ffffff",
+            "electric-blue": "#277f93",
+            "primary-container": "#006578",
+            "secondary": "#436088",
+            "surface-container-lowest": "#ffffff"
+          },
+          spacing: {
+            "margin-desktop": "48px",
+            "gutter": "24px",
+            "margin-mobile": "16px",
+            "container-max": "1440px",
+            "unit": "8px"
+          },
+          fontSize: {
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
+            "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased overflow-x-hidden min-h-screen flex flex-col">
+  
+  <!-- Aurora Ambient Blobs -->
+  <div class="aurora-bg">
+    <div class="aurora-blob aurora-blob-1"></div>
+    <div class="aurora-blob aurora-blob-2"></div>
+  </div>
+
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-gutter py-unit bg-white/60 dark:bg-on-tertiary-fixed/60 backdrop-blur-xl rounded-full mt-margin-mobile mx-margin-mobile md:mt-unit md:mx-auto max-w-container-max border border-white/20 shadow-[0_20px_50px_rgba(49,134,155,0.15)]">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2">
+      <img class="h-10 w-10 object-contain rounded-md" data-alt="iCarbonSteel Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj62DJI_SnDMFF7OZ-t-hqBIDTH3cP0jaeQBY3cnlk1NRONCbk_5jKCHUVcFZVCPdHv0krca-iGKtZtWQyzsDWvGJOCvM-QI8TXqumKNTE-OHsJOdF3w-e7SjBT2OaliZzhE3GDJ1Ud-9B7x-ThCaJUhAT-Cw_CvFCqEVex2gT6W2SRUOIV4pmcFtDvaxu8Toqb-vpB_fldb_OlTBAGOYlB7ofpfUs0e-wNZQhNgcDBg5JABUJkaYSphUS79zLEwWdJA"/>
+      <span class="text-title-md font-title-md font-bold text-primary hidden sm:block">کربن‌استیل</span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="hidden lg:flex gap-8 list-none m-0 p-0 items-center">
+      <li class="cursor-pointer text-on-surface-variant hover:text-primary transition-colors text-body-md">
+        <a href="index.html">خانه</a>
+      </li>
+      <li class="cursor-pointer text-on-surface-variant hover:text-primary transition-colors text-body-md">
+        <a href="products.html">محصولات</a>
+      </li>
+      <li class="cursor-pointer text-primary border-b-2 border-primary pb-1 font-bold text-body-md">
+        <a href="calculator.html">محاسبه وزن</a>
+      </li>
+      <li class="cursor-pointer text-on-surface-variant hover:text-primary transition-colors text-body-md">
+        <a href="shipping.html">هزینه حمل</a>
+      </li>
+      <li class="cursor-pointer text-on-surface-variant hover:text-primary transition-colors text-body-md">
+        <a href="about.html">درباره ما</a>
+      </li>
+      <li class="cursor-pointer text-on-surface-variant hover:text-primary transition-colors text-body-md">
+        <a href="contact.html">پشتیبانی</a>
+      </li>
+    </ul>
+
+    <!-- Action & Mobile Menu -->
+    <div class="flex items-center gap-4">
+      <a class="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full btn-primary text-on-primary text-body-md font-title-md" href="tel:02144267740">
+        <span dir="ltr">۰۲۱-۴۴۲۶۷۷۴۰</span>
+        <span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>call</span>
+      </a>
+      <button class="lg:hidden text-primary p-2 mobile-menu-btn" aria-label="Open Menu">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="pt-36 pb-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full text-right">
+    <div class="flex flex-col gap-3">
+      <h1 class="text-display-lg font-display-lg text-on-surface">ماشین حساب محاسبه وزن استیل</h1>
+      <p class="text-body-lg text-on-surface-variant max-w-3xl">با استفاده از ابزار دقیق ما، وزن انواع مقاطع فولادی و استیل را با بالاترین دقت محاسبه کنید. این ابزار برای مهندسان، طراحان و فعالان صنعت فولاد بهینه‌سازی شده است.</p>
+    </div>
+  </header>
+
+  <!-- Main Calculator Layout -->
+  <main class="flex-grow px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Categories Sidebar -->
+      <aside class="lg:col-span-3 flex flex-col gap-2">
+        <div class="glass-panel rounded-2xl p-3 flex flex-col gap-1 text-right">
+          <span class="text-label-sm font-bold text-on-surface-variant px-4 py-2">انتخاب مقطع فولادی</span>
+          
+          <button class="shape-tab flex items-center justify-between p-3.5 rounded-xl text-body-md text-on-surface hover:bg-surface-mist/40 transition-all text-right" data-shape="rebar" onclick="selectShape('rebar')">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">linear_scale</span>
+              <span>میلگرد (Rebar)</span>
+            </div>
+            <span class="material-symbols-outlined text-sm text-outline-variant">chevron_left</span>
+          </button>
+
+          <button class="shape-tab flex items-center justify-between p-3.5 rounded-xl text-body-md text-on-surface hover:bg-surface-mist/40 transition-all text-right" data-shape="beam" onclick="selectShape('beam')">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">view_stream</span>
+              <span>تیرآهن (I-Beam)</span>
+            </div>
+            <span class="material-symbols-outlined text-sm text-outline-variant">chevron_left</span>
+          </button>
+
+          <button class="shape-tab flex items-center justify-between p-3.5 rounded-xl text-body-md text-on-surface hover:bg-surface-mist/40 transition-all text-right" data-shape="pipe" onclick="selectShape('pipe')">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">radio_button_unchecked</span>
+              <span>لوله (Pipe)</span>
+            </div>
+            <span class="material-symbols-outlined text-sm text-outline-variant">chevron_left</span>
+          </button>
+
+          <button class="shape-tab flex items-center justify-between p-3.5 rounded-xl text-body-md text-on-surface hover:bg-surface-mist/40 transition-all text-right" data-shape="box" onclick="selectShape('box')">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">crop_square</span>
+              <span>قوطی و پروفیل (Box)</span>
+            </div>
+            <span class="material-symbols-outlined text-sm text-outline-variant">chevron_left</span>
+          </button>
+
+          <button class="shape-tab active-tab flex items-center justify-between p-3.5 rounded-xl text-body-md text-on-surface hover:bg-surface-mist/40 transition-all text-right" data-shape="sheet" onclick="selectShape('sheet')">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">layers</span>
+              <span>ورق (Sheet)</span>
+            </div>
+            <span class="material-symbols-outlined text-sm text-outline-variant">chevron_left</span>
+          </button>
+
+          <button class="shape-tab flex items-center justify-between p-3.5 rounded-xl text-body-md text-on-surface hover:bg-surface-mist/40 transition-all text-right" data-shape="angle" onclick="selectShape('angle')">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">crop_free</span>
+              <span>نبشی و ناودانی (Angle)</span>
+            </div>
+            <span class="material-symbols-outlined text-sm text-outline-variant">chevron_left</span>
+          </button>
+
+        </div>
+
+        <div class="glass-panel rounded-2xl p-5 mt-4 text-right flex flex-col gap-3">
+          <span class="text-body-md font-bold text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-sm">info</span>
+            <span>راهنمای سریع چگالی</span>
+          </span>
+          <p class="text-sm text-on-surface-variant leading-relaxed">
+            فولاد معمولی: ۷.۸۵ g/cm³<br/>
+            استیل ۳۰۴ / ۳۱۶: ۷.۹۳ g/cm³<br/>
+            آلومینیوم: ۲.۷۰ g/cm³<br/>
+            مس: ۸.۹۶ g/cm³
+          </p>
+        </div>
+      </aside>
+
+      <!-- Center Dynamic Calculation Form -->
+      <section class="lg:col-span-5 flex flex-col gap-6">
+        <div class="glass-panel rounded-2xl p-6 sm:p-8 text-right flex flex-col gap-6">
+          <div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
+            <h2 id="form-title" class="text-title-md font-title-md text-on-surface">مشخصات ابعادی ورق (Sheet)</h2>
+            <span id="shape-badge" class="px-3 py-1 bg-primary/10 text-primary rounded-full text-label-sm font-bold">ورق فولادی</span>
+          </div>
+
+          <!-- Dynamic Form Container -->
+          <div id="dynamic-inputs" class="flex flex-col gap-5">
+            <!-- Rendered by JavaScript based on active shape -->
+          </div>
+
+          <!-- Density Alloy Selector -->
+          <div class="flex flex-col gap-2">
+            <label class="text-body-md font-bold text-on-surface">نوع آلیاژ و چگالی</label>
+            <select id="input-density" class="glass-input rounded-xl py-3 px-4 text-body-md text-on-surface w-full" onchange="calculateWeight()">
+              <option value="7.85">فولاد کربنی ساختمانی (چگالی: ۷.۸۵)</option>
+              <option value="7.93">استیل ۳۰۴ و ۳۱۶ (چگالی: ۷.۹۳)</option>
+              <option value="8.00">استیل آلیاژی نسوز ۳۱۰ (چگالی: ۸.۰۰)</option>
+              <option value="2.70">آلومینیوم (چگالی: ۲.۷۰)</option>
+              <option value="8.96">مس و برنج (چگالی: ۸.۹۶)</option>
+            </select>
+          </div>
+
+          <!-- Action Button -->
+          <button class="w-full py-4 rounded-xl btn-primary text-white text-title-md font-title-md mt-2 flex items-center justify-center gap-2" onclick="calculateWeight()">
+            <span class="material-symbols-outlined">calculate</span>
+            <span>محاسبه وزن نهایی</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Results & 3D Visualization Column -->
+      <section class="lg:col-span-4 flex flex-col gap-6">
+        
+        <!-- Live Results Box -->
+        <div class="glass-panel rounded-2xl p-6 sm:p-8 text-right flex flex-col gap-6 border-2 border-primary/20 bg-white/85 shadow-xl">
+          <div class="flex items-center gap-2 text-primary font-bold text-title-md">
+            <span class="material-symbols-outlined">analytics</span>
+            <span>نتایج محاسبه</span>
+          </div>
+
+          <div class="bg-primary/5 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-2 border border-primary/15">
+            <span class="text-body-md text-on-surface-variant font-medium">وزن کل تخمینی</span>
+            <div class="text-display-lg font-black text-primary flex items-baseline gap-2">
+              <span id="result-weight">۳۱.۴۰</span>
+              <span class="text-title-md font-bold text-on-surface-variant">کیلوگرم</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card rounded-xl p-4 flex flex-col gap-1 text-center">
+              <span class="text-label-sm text-on-surface-variant">مساحت سطح</span>
+              <span id="result-area" class="text-title-md font-bold text-on-surface">۲.۰۰ م²</span>
+            </div>
+            <div class="glass-card rounded-xl p-4 flex flex-col gap-1 text-center">
+              <span class="text-label-sm text-on-surface-variant">حجم مقطع</span>
+              <span id="result-volume" class="text-title-md font-bold text-on-surface">۴,۰۰۰ سم³</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/30 flex flex-col gap-3">
+            <button class="w-full py-3 rounded-xl bg-primary text-white font-title-md flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors" onclick="showToast('مشخصات به بخش صدور پیش‌فاکتور ارسال شد')">
+              <span class="material-symbols-outlined text-sm">request_quote</span>
+              <span>دریافت پیش‌فاکتور این وزن</span>
+            </button>
+            <a href="shipping.html" class="w-full py-3 rounded-xl glass-card text-primary font-title-md text-center flex items-center justify-center gap-2 hover:bg-primary/5 transition-colors">
+              <span class="material-symbols-outlined text-sm">local_shipping</span>
+              <span>محاسبه کرایه حمل بار</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3D Schematic Box -->
+        <div class="glass-panel rounded-2xl p-6 text-center flex flex-col items-center gap-4">
+          <div class="w-full h-44 rounded-xl bg-surface-variant bg-cover bg-center overflow-hidden" data-alt="Technical 3D steel visualization" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDylHzmqggSxAhsBUKh3W_5hyN1YJ46-kbY0mrUpbr8d-ytkdKCwIjaD2wnu6SdkG_lNKoH1ha5Gh-lnogKsqQ277Jg_manF-kBN4ZN1--1YtEWzVXRB2YKeCYBQatCXZXySeTt4h56ems-apnRpCXvVkIzbKOlF-m_fnkbQ-a-Lobl9x4vasABQTWJpvBb4uqpAqX-OVag44-BHMzeXEZn7MjJG3Ijv6Gez-m3mK0RJGDstzni0DDD");'></div>
+          <p class="text-xs text-on-surface-variant">نمودار ابعادی و پارامتری مقطع مهندسی استاندارد</p>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-low dark:bg-on-tertiary-fixed border-t border-outline-variant dark:border-on-tertiary-fixed-variant w-full px-margin-mobile md:px-margin-desktop flex flex-col justify-between gap-gutter pt-12 pb-6 mt-auto">
+    <div class="flex flex-col md:flex-row justify-between gap-8">
+      <div class="flex flex-col gap-4 md:w-1/3 text-right">
+        <span class="text-headline-lg-mobile font-headline-lg-mobile font-black text-on-surface dark:text-surface">کربن‌استیل</span>
+        <p class="text-body-md font-body-md text-on-surface-variant">پلتفرم هوشمند و پیشرو در تجارت مدرن مقاطع فولادی و صنعتی.</p>
+      </div>
+      <div class="flex flex-col gap-4 text-right">
+        <span class="text-label-sm font-label-sm text-on-surface font-bold mb-2">دسترسی سریع</span>
+        <ul class="flex flex-col gap-2 list-none p-0 m-0">
+          <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">صفحه اصلی</a></li>
+          <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="products.html">محصولات</a></li>
+          <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="shipping.html">هزینه حمل بار</a></li>
+          <li><a class="text-body-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">تماس با کارشناسان</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="w-full mt-8 pt-6 border-t border-outline-variant/30 text-center md:text-right text-body-md text-on-surface-variant">
+      © ۲۰۲۴ تمامی حقوق برای کربن‌استیل محفوظ است.
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    let currentShape = 'sheet';
+
+    const shapeConfigs = {
+      sheet: {
+        title: 'مشخصات ابعادی ورق (Sheet)',
+        badge: 'ورق فولادی',
+        fields: [
+          { id: 'thickness', label: 'ضخامت (میلی‌متر)', default: 2, step: 0.1 },
+          { id: 'width', label: 'عرض ورق (میلی‌متر)', default: 1000, step: 10 },
+          { id: 'length', label: 'طول ورق (متر)', default: 2, step: 0.1 },
+          { id: 'count', label: 'تعداد (شیت)', default: 1, step: 1 }
+        ]
+      },
+      rebar: {
+        title: 'مشخصات میلگرد (Rebar)',
+        badge: 'میلگرد آجدار/ساده',
+        fields: [
+          { id: 'diameter', label: 'سایز / قطر میلگرد (میلی‌متر)', default: 16, step: 2 },
+          { id: 'length', label: 'طول شاخه (متر)', default: 12, step: 0.5 },
+          { id: 'count', label: 'تعداد شاخه', default: 10, step: 1 }
+        ]
+      },
+      beam: {
+        title: 'مشخصات تیرآهن IPE / IPB',
+        badge: 'تیرآهن سازه',
+        fields: [
+          { id: 'beam_size', label: 'سایز تیرآهن (IPE)', default: 16, select: [12, 14, 16, 18, 20, 22, 24, 27, 30] },
+          { id: 'length', label: 'طول شاخه (متر)', default: 12, step: 1 },
+          { id: 'count', label: 'تعداد شاخه', default: 5, step: 1 }
+        ]
+      },
+      pipe: {
+        title: 'مشخصات لوله صنعتی و داربستی (Pipe)',
+        badge: 'لوله فولادی',
+        fields: [
+          { id: 'out_dia', label: 'قطر خارجی (میلی‌متر)', default: 48.3, step: 0.1 },
+          { id: 'wall_thick', label: 'ضخامت دیواره (میلی‌متر)', default: 3.2, step: 0.1 },
+          { id: 'length', label: 'طول شاخه (متر)', default: 6, step: 0.5 },
+          { id: 'count', label: 'تعداد شاخه', default: 20, step: 1 }
+        ]
+      },
+      box: {
+        title: 'مشخصات قوطی و پروفیل مستطیلی/مربعی',
+        badge: 'پروفیل و قوطی',
+        fields: [
+          { id: 'dim_a', label: 'ضلع اول A (میلی‌متر)', default: 40, step: 1 },
+          { id: 'dim_b', label: 'ضلع دوم B (میلی‌متر)', default: 40, step: 1 },
+          { id: 'thickness', label: 'ضخامت (میلی‌متر)', default: 2, step: 0.1 },
+          { id: 'length', label: 'طول شاخه (متر)', default: 6, step: 0.5 },
+          { id: 'count', label: 'تعداد شاخه', default: 10, step: 1 }
+        ]
+      },
+      angle: {
+        title: 'مشخصات نبشی و ناودانی',
+        badge: 'نبشی (L-Profile)',
+        fields: [
+          { id: 'wing_a', label: 'سایز بال نبشی (میلی‌متر)', default: 50, step: 1 },
+          { id: 'thickness', label: 'ضخامت بال (میلی‌متر)', default: 5, step: 0.5 },
+          { id: 'length', label: 'طول شاخه (متر)', default: 6, step: 0.5 },
+          { id: 'count', label: 'تعداد شاخه', default: 10, step: 1 }
+        ]
+      }
+    };
+
+    function selectShape(shapeKey) {
+      currentShape = shapeKey;
+      document.querySelectorAll('.shape-tab').forEach(tab => {
+        if (tab.getAttribute('data-shape') === shapeKey) {
+          tab.classList.add('active-tab');
+        } else {
+          tab.classList.remove('active-tab');
+        }
+      });
+      renderForm();
+      calculateWeight();
+    }
+
+    function renderForm() {
+      const cfg = shapeConfigs[currentShape];
+      document.getElementById('form-title').innerText = cfg.title;
+      document.getElementById('shape-badge').innerText = cfg.badge;
+
+      const container = document.getElementById('dynamic-inputs');
+      container.innerHTML = '';
+
+      cfg.fields.forEach(field => {
+        const div = document.createElement('div');
+        div.className = 'flex flex-col gap-2';
+
+        if (field.select) {
+          div.innerHTML = `
+            <label class="text-body-md font-bold text-on-surface">${field.label}</label>
+            <select id="inp-${field.id}" class="glass-input rounded-xl py-3 px-4 text-body-md text-on-surface w-full" onchange="calculateWeight()">
+              ${field.select.map(s => `<option value="${s}" ${s === field.default ? 'selected' : ''}>سایز IPE ${s}</option>`).join('')}
+            </select>
+          `;
+        } else {
+          div.innerHTML = `
+            <label class="text-body-md font-bold text-on-surface">${field.label}</label>
+            <input type="number" id="inp-${field.id}" step="${field.step}" value="${field.default}" class="glass-input rounded-xl py-3 px-4 text-body-md text-on-surface w-full" oninput="calculateWeight()"/>
+          `;
+        }
+        container.appendChild(div);
+      });
+    }
+
+    // Beam standard linear weight (kg/m)
+    const beamWeights = {
+      12: 10.4,
+      14: 12.9,
+      16: 15.8,
+      18: 18.8,
+      20: 22.4,
+      22: 26.2,
+      24: 30.7,
+      27: 36.1,
+      30: 42.2
+    };
+
+    function calculateWeight() {
+      const density = parseFloat(document.getElementById('input-density').value) || 7.85;
+      let totalWeight = 0;
+      let totalArea = 0;
+      let totalVolume = 0;
+
+      if (currentShape === 'sheet') {
+        const t = parseFloat(document.getElementById('inp-thickness')?.value) || 2; // mm
+        const w = parseFloat(document.getElementById('inp-width')?.value) || 1000; // mm
+        const l = parseFloat(document.getElementById('inp-length')?.value) || 2; // m
+        const count = parseFloat(document.getElementById('inp-count')?.value) || 1;
+
+        // Weight = (t * w * (l * 1000) * density) / 1,000,000
+        const singleVolume = (t * w * (l * 1000)) / 1000; // cm3
+        const singleWeight = (singleVolume * density) / 1000; // kg
+        totalWeight = singleWeight * count;
+        totalArea = ((w / 1000) * l) * count;
+        totalVolume = singleVolume * count;
+      } else if (currentShape === 'rebar') {
+        const dia = parseFloat(document.getElementById('inp-diameter')?.value) || 16; // mm
+        const l = parseFloat(document.getElementById('inp-length')?.value) || 12; // m
+        const count = parseFloat(document.getElementById('inp-count')?.value) || 1;
+
+        // Weight = (dia^2 / 162) * length
+        const singleWeight = ((dia * dia) / 162) * l * (density / 7.85);
+        totalWeight = singleWeight * count;
+        totalArea = (Math.PI * (dia / 1000) * l) * count;
+        totalVolume = (totalWeight / density) * 1000;
+      } else if (currentShape === 'beam') {
+        const size = parseInt(document.getElementById('inp-beam_size')?.value) || 16;
+        const l = parseFloat(document.getElementById('inp-length')?.value) || 12;
+        const count = parseFloat(document.getElementById('inp-count')?.value) || 1;
+
+        const stdWeightPerM = beamWeights[size] || 15.8;
+        const singleWeight = stdWeightPerM * l * (density / 7.85);
+        totalWeight = singleWeight * count;
+        totalArea = (size * 0.05 * l) * count;
+        totalVolume = (totalWeight / density) * 1000;
+      } else if (currentShape === 'pipe') {
+        const d = parseFloat(document.getElementById('inp-out_dia')?.value) || 48.3;
+        const t = parseFloat(document.getElementById('inp-wall_thick')?.value) || 3.2;
+        const l = parseFloat(document.getElementById('inp-length')?.value) || 6;
+        const count = parseFloat(document.getElementById('inp-count')?.value) || 1;
+
+        // Weight = (d - t) * t * 0.02466 * l * (density / 7.85)
+        const singleWeight = (d - t) * t * 0.02466 * l * (density / 7.85);
+        totalWeight = singleWeight * count;
+        totalArea = (Math.PI * (d / 1000) * l) * count;
+        totalVolume = (totalWeight / density) * 1000;
+      } else if (currentShape === 'box') {
+        const a = parseFloat(document.getElementById('inp-dim_a')?.value) || 40;
+        const b = parseFloat(document.getElementById('inp-dim_b')?.value) || 40;
+        const t = parseFloat(document.getElementById('inp-thickness')?.value) || 2;
+        const l = parseFloat(document.getElementById('inp-length')?.value) || 6;
+        const count = parseFloat(document.getElementById('inp-count')?.value) || 1;
+
+        // Weight = 2 * (a + b) * t * 0.00785 * l * (density / 7.85)
+        const singleWeight = 2 * (a + b) * t * 0.00785 * l * (density / 7.85);
+        totalWeight = singleWeight * count;
+        totalArea = (2 * (a + b) / 1000 * l) * count;
+        totalVolume = (totalWeight / density) * 1000;
+      } else if (currentShape === 'angle') {
+        const w = parseFloat(document.getElementById('inp-wing_a')?.value) || 50;
+        const t = parseFloat(document.getElementById('inp-thickness')?.value) || 5;
+        const l = parseFloat(document.getElementById('inp-length')?.value) || 6;
+        const count = parseFloat(document.getElementById('inp-count')?.value) || 1;
+
+        // Weight = (2 * w - t) * t * 0.00785 * l * (density / 7.85)
+        const singleWeight = (2 * w - t) * t * 0.00785 * l * (density / 7.85);
+        totalWeight = singleWeight * count;
+        totalArea = ((2 * w) / 1000 * l) * count;
+        totalVolume = (totalWeight / density) * 1000;
+      }
+
+      document.getElementById('result-weight').innerText = totalWeight.toLocaleString('fa-IR', { maximumFractionDigits: 2 });
+      document.getElementById('result-area').innerText = totalArea.toLocaleString('fa-IR', { maximumFractionDigits: 2 }) + ' م²';
+      document.getElementById('result-volume').innerText = Math.round(totalVolume).toLocaleString('fa-IR') + ' سم³';
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', () => {
+      renderForm();
+      calculateWeight();
+    });
+  </script>
+</body>
+</html>
