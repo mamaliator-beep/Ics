@@ -1,0 +1,234 @@
+/* iCarbonSteel - Global Persian RTL Styles & Glassmorphism System */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #006578;
+  --primary-dark: #004b5a;
+  --primary-container: #277f93;
+  --secondary: #436088;
+  --surface: #f9f9f9;
+  --surface-low: #f3f3f4;
+  --surface-mist: #dce6f1;
+  --on-surface: #1a1c1c;
+  --on-surface-variant: #3f484c;
+  --outline-variant: #bec8cc;
+  --siemens-green: #10b981;
+  --error: #ba1a1a;
+}
+
+@font-face {
+  font-family: 'Dana';
+  src: url('https://themes.pichforest.com/vuejs/vristo/fonts/Dana-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Dana';
+  src: url('https://themes.pichforest.com/vuejs/vristo/fonts/Dana-DemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Dana';
+  src: url('https://themes.pichforest.com/vuejs/vristo/fonts/Dana-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Dana';
+  src: url('https://themes.pichforest.com/vuejs/vristo/fonts/Dana-Black.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  src: url('https://themes.pichforest.com/vuejs/vristo/fonts/YekanBakh-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Yekan Bakh';
+  src: url('https://themes.pichforest.com/vuejs/vristo/fonts/YekanBakh-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  font-feature-settings: "ss01", "ss02";
+}
+
+body {
+  font-family: 'Dana', 'Vazirmatn', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f9f9f9;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(49, 134, 155, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(49, 134, 155, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(49, 134, 155, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(49, 134, 155, 0.04) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: #1a1c1c;
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(49, 134, 155, 0.05);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(0, 101, 120, 0.05);
+}
+
+.glass-input, .input-field {
+  background: rgba(220, 230, 241, 0.45);
+  border: 1px solid rgba(190, 200, 204, 0.6);
+  transition: all 0.25s ease;
+}
+
+.glass-input:focus, .input-field:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #006578;
+  box-shadow: 0 0 0 3px rgba(0, 101, 120, 0.15);
+  outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #006578 0%, #277f93 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 101, 120, 0.25);
+  transition: all 0.25s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 101, 120, 0.35);
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Aurora background */
+.aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora-blob {
+  position: absolute;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 20s infinite alternate;
+}
+.aurora-blob-1 {
+  top: -10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(131,210,233,0.3) 0%, rgba(255,255,255,0) 70%);
+}
+.aurora-blob-2 {
+  bottom: -20%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(0,101,120,0.15) 0%, rgba(255,255,255,0) 70%);
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, 5%) scale(1.1); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #bec8cc;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6c767f;
+}
+
+/* Active tab style */
+.active-tab {
+  background-color: #f3f8fa;
+  border-right: 4px solid #006578;
+  color: #006578 !important;
+  font-weight: 700;
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(to left, #006578, #436088);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ambient-shadow {
+  box-shadow: 0 20px 50px rgba(49, 134, 155, 0.15);
+}
+
+.ambient-glow {
+  box-shadow: 0 30px 60px -15px rgba(49, 134, 155, 0.15);
+}
+
+/* Toast Notifications */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: rgba(26, 28, 28, 0.95);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
